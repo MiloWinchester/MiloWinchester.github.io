@@ -275,7 +275,8 @@ a {
 #projects {
     width: 100%;
     height: 25%;
-    background-image: linear-gradient(to top, #141e30, #182539, #1c2c42, #20334b, #243b55);
+    /* background-image: linear-gradient(to top, #141e30, #182539, #1c2c42, #20334b, #243b55); */
+    background-color: #243b55;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -543,13 +544,6 @@ a {
       display: none;
     }
 }
-  
-
-#experience {
-    width: 100%;
-    height: 25%;
-    background-image: linear-gradient(to bottom, #141e30, #182539, #1c2c42, #20334b, #243b55);
-}
 
 .scale-in-center {
 	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -580,4 +574,82 @@ a {
       opacity: 1;
     }
 }
-  
+
+#experience {
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(to top, #141e30, #182539, #1c2c42, #20334b, #243b55);
+}
+
+#contact {
+    width: 100%;
+    height: 15%;
+    background-color: #141E30;
+}
+
+#container > hr {
+    width: 90%;
+    margin: auto;
+}
+
+#footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+}
+
+#footer-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#footer-title {
+    font-size: 45px;
+}
+
+#social-links {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    font-size: 22px;
+    padding-top: 2px;
+}
+
+#sections-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#sections-list a {
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+#sections-list a:hover {
+    color: #de7879;
+}
+
+#copy-right {
+    font-size: 12px;
+}

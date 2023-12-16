@@ -98,6 +98,11 @@ a {
 #github-btn a {
     color: #9e4bfe;
     transition: color 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 #github-btn:hover {
@@ -173,6 +178,14 @@ a {
 
 #resume-btn:hover {
     transform: scale(1.05, 1.05);
+}
+
+#resume-btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 #skills {
@@ -311,7 +324,7 @@ a {
     border: 1px solid transparent;
     border-radius: 20px;
     background-color: #141E30;
-    box-shadow: 0 0 10px 1px #243b55;
+    box-shadow: 0 0 10px 1px #6592c5bd;
     transition: transform 0.5s, box-shadow 0.5s;
 }
 
@@ -460,6 +473,14 @@ a {
     transition: transform 0.2s;
 }
 
+.project-btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
 .bg-purple {
     background-color: #9e4bfe;
 }
@@ -585,6 +606,76 @@ a {
     width: 100%;
     height: 15%;
     background-color: #141E30;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+}
+
+.contact-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.social-link {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    font-size: 28px;
+    padding-top: 2px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.social-link a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#telegram {
+    background-color: cornflowerblue;
+}
+
+#instagram {
+    background-color: #ff1d6e;
+}
+
+#twitter {
+    background-color: black;
+}
+
+#linkedin {
+    background-color: #6983b0;
+}
+
+#github {
+    background-color: #373333;
+}
+
+#mail {
+    background-color: crimson;
+}
+
+#website {
+    background-color: rgb(86, 86, 86);
+}
+
+#stackoverflow {
+    background-color: rgb(255, 123, 0);
 }
 
 #container > hr {
@@ -611,28 +702,38 @@ a {
 }
 
 #footer-title {
-    font-size: 45px;
+    font-size: 40px;
 }
 
-#social-links {
-    width: 20%;
+#footer-btns {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
-.social-link {
-    width: 40px;
+.footer-btn {
+    outline: none;
+    background-color: transparent;
+    width: 200px;
     height: 40px;
+    border: 1px solid rgb(255, 123, 0);
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.footer-btn:hover {
+    background-color: rgb(255, 123, 0);
+}
+
+.footer-btn a {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    font-size: 22px;
-    padding-top: 2px;
+    width: 100%;
+    height: 100%;
 }
 
 #sections-list {
@@ -647,9 +748,10 @@ a {
 }
 
 #sections-list a:hover {
-    color: #de7879;
+    color: gold;
 }
 
 #copy-right {
     font-size: 12px;
 }
+

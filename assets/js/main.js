@@ -1,7 +1,6 @@
 "use-strict"
 const $ = document;
 const careerType = $.getElementById('type-career');
-const githubBtn = $.getElementById('github-btn');
 const container = $.getElementById('container');
 const projects = $.querySelectorAll('.project-container');
 const modalProject = $.querySelector('.project-modal');
@@ -31,10 +30,6 @@ const setTypeLibrary = () => {
 
 const setAosLibrary = () => {
     AOS.init();
-}
-
-const goToGithub = () => {
-    location.href = 'https://github.com/MiloWinchester';
 }
 
 const setModalProjectData = (project, target) => {
@@ -85,8 +80,6 @@ window.addEventListener('DOMContentLoaded', () => {
     setTypeLibrary();
     setAosLibrary();
 })
-
-githubBtn.addEventListener('click' , goToGithub);
 
 projects.forEach(project => {
     project.addEventListener('click', event => {

@@ -39,7 +39,7 @@ const setAosLibrary = () => {
     AOS.init();
 }
 
-const changeLinksAOS = () => {
+const responsiveLayout = () => {
     let links = [telegramLink, instagramLink, mailLink, websiteLink];
 
     if (window.screen.availWidth <= 600) {
@@ -47,6 +47,8 @@ const changeLinksAOS = () => {
         links.map(link => {
             link.dataset.aos = 'zoom-in';
         })
+
+        navList.classList.add('hide-navlist')
 
     }
 }
@@ -125,7 +127,7 @@ const hideNavList = () => {
 window.addEventListener('DOMContentLoaded', () => {
     setTypeLibrary();
     setAosLibrary();
-    changeLinksAOS();
+    responsiveLayout();
 })
 
 projects.forEach(project => {

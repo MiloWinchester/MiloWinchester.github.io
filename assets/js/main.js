@@ -49,7 +49,6 @@ const responsiveLayout = () => {
         })
 
         navList.classList.add('hide-navlist')
-
     }
 }
 

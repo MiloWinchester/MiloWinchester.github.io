@@ -783,7 +783,7 @@ a {
 }
 
 .hide-navlist {
-    display: none;
+    display: none !important;
 }
 
 .slide-in-blurred-top {

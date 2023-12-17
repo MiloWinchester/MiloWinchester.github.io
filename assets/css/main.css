@@ -404,6 +404,7 @@ a {
     z-index: 110;
     overflow: auto;
     display: none;
+    scrollbar-width: none;
 }
 
 .project-modal::-webkit-scrollbar {
@@ -605,12 +606,13 @@ a {
 #contact {
     width: 100%;
     height: 15%;
-    background-color: #141E30;
+    /* background-color: #141E30; */
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     gap: 60px;
+    background-image: linear-gradient(to top, #141e30, #182539, #1c2c42, #20334b, #243b55);
 }
 
 .contact-container {
@@ -755,3 +757,237 @@ a {
     font-size: 12px;
 }
 
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+
+    body {
+        height: 300%;
+    }
+
+    #header {
+        padding: 20px;
+        height: auto;
+    }
+    
+    #header-logo h1 {
+        font-size: 28px;
+    }
+
+    #header-logo i {
+        font-size: 24px;
+    }
+
+    #navlist {
+        flex-direction: column;
+        gap: 10px;
+        display: none;
+    }
+
+    #navlist a {
+        font-size: 16px;
+    }
+
+    #github-btn {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #about{
+        flex-direction: column-reverse;
+        padding: 50px 25px;
+        height: 21%;
+        gap: 30px;
+    }
+
+    #introduction {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #introduction-img {
+        width: 70%;
+    }
+
+    #introduction > h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #introduction > h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #introduction > p {
+        width: 100%;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    #skills {
+        height: 42%;
+    }
+
+    .skill-row, .project-row {
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .skill {
+        width: 70%;
+    }
+
+    .skill-category > h1 {
+        text-align: center;
+    }
+
+    #projects {
+        height: 18%;
+    }
+
+    .project-container {
+        width: 50%;
+        height: auto;
+    }
+
+    #contact {
+        height: 12%;
+    }
+
+    .contact-container {
+        flex-wrap: wrap;
+        gap: 46px;
+    }
+
+    .social-link {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .project-modal {
+        width: 90%;
+        left: 5%;
+    }
+
+    .project-btn, .modal-project-description {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    body {
+        height: 320%;
+    }
+
+    #about {
+        height: 17%;
+    }
+
+    #introduction-img {
+        width: 90%;
+    }
+
+    #introduction > h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #introduction > h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #introduction > p {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    #skills {
+        height: 45%;
+    } 
+    
+    .skill {
+        width: 90%;
+    }
+
+    .skill-title {
+        font-size: 11px;
+    }
+
+    .skill-title > img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .skill-category > h1 {
+        font-size: 30px;
+    }
+
+    .section-title {
+        padding: 0 15px;
+    }
+
+    .description {
+        font-size: 20px;
+    }
+
+    .project-container {
+        width: 85%;
+    }
+
+    #contact {
+        height: 17%;
+    }
+
+    #footer-title {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .footer-btn {
+        width: 140px;
+        font-size: 15px;
+    }
+
+    .project-modal {
+        padding: 25px;
+    }
+
+    .modal-project-title {
+        font-size: 35px;
+    }
+
+    .modal-project-description {
+        font-size: 15px;
+    }
+
+    .project-btns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-btn {
+        width: 80%;
+    }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* You can place tablet-specific styles here */
+    /* Example - Reduce padding and font-sizes slightly for tablets */
+    #header {
+        padding: 20px 100px; /* less padding than desktop but more than mobile */
+    }
+
+    #header-logo h1 {
+        font-size: 30px;
+    }
+
+    /* ... additional styles for other elements for tablets ... */
+}

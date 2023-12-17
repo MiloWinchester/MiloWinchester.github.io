@@ -9,7 +9,11 @@ const modalTitle = $.querySelector('.modal-project-title');
 const modalDate = $.querySelector('.modal-project-date');
 const modalDescrip = $.querySelector('.modal-project-description');
 const modalSkills = $.querySelector(`.modal-project-skills`);
-const closeModalBtn = $.querySelector('.close-btn')
+const closeModalBtn = $.querySelector('.close-btn');
+const telegramLink = $.getElementById('telegram');
+const instagramLink = $.getElementById('instagram');
+const mailLink = $.getElementById('mail');
+const websiteLink = $.getElementById('website');
 
 const setTypeLibrary = () => {
     
@@ -30,6 +34,18 @@ const setTypeLibrary = () => {
 
 const setAosLibrary = () => {
     AOS.init();
+}
+
+const changeLinksAOS = () => {
+    let links = [telegramLink, instagramLink, mailLink, websiteLink];
+
+    if (window.screen.availWidth <= 600) {
+        
+        links.map(link => {
+            link.dataset.aos = 'zoom-in';
+        })
+
+    }
 }
 
 const setModalProjectData = (project, target) => {
@@ -79,6 +95,7 @@ const closeModal = () => {
 window.addEventListener('DOMContentLoaded', () => {
     setTypeLibrary();
     setAosLibrary();
+    changeLinksAOS();
 })
 
 projects.forEach(project => {

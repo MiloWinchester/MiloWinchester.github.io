@@ -14,6 +14,8 @@ const telegramLink = $.getElementById('telegram');
 const instagramLink = $.getElementById('instagram');
 const mailLink = $.getElementById('mail');
 const websiteLink = $.getElementById('website');
+const menuBtn = $.getElementById('menu-btn');
+const navList = $.getElementById('navlist');
 
 const setTypeLibrary = () => {
     
@@ -40,7 +42,7 @@ const changeLinksAOS = () => {
     let links = [telegramLink, instagramLink, mailLink, websiteLink];
 
     if (window.screen.availWidth <= 600) {
-        
+
         links.map(link => {
             link.dataset.aos = 'zoom-in';
         })
@@ -92,6 +94,20 @@ const closeModal = () => {
     container.classList.remove('blur')
 }
 
+const showNavList = () => {
+    navList.classList.remove('hide-navlist');
+    navList.classList.remove('slide-out-blurred-top')
+    navList.classList.add('show-navlist')
+    navList.classList.add('slide-in-blurred-top');
+}
+
+const hideNavList = () => {
+    navList.classList.remove('show-navlist');
+    navList.classList.remove('slide-in-blurred-top')
+    navList.classList.add('hide-navlist')
+    navList.classList.add('slide-out-blurred-top');
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     setTypeLibrary();
     setAosLibrary();
@@ -107,4 +123,8 @@ projects.forEach(project => {
 
 closeModalBtn.addEventListener('click', () => {
     closeModal()
+})
+
+menuBtn.addEventListener('click', () => {
+    showNavList();
 })

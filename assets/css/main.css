@@ -83,6 +83,12 @@ a {
     color: whitesmoke;
 }
 
+#header-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #github-btn {
     width: 170px;
     height: 45px;
@@ -111,6 +117,21 @@ a {
 
 #github-btn:hover a {
     color: whitesmoke;
+}
+
+#menu-btn {
+    display: none;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 30px;
+    transition: color 0.2s;
+}
+
+#menu-btn:hover {
+    color: #de7879;
 }
 
 #about {
@@ -757,6 +778,104 @@ a {
     font-size: 12px;
 }
 
+.show-navlist {
+    display: flex !important;
+}
+
+.slide-in-blurred-top {
+	-webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes slide-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+}
+
+@keyframes slide-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+}
+  
+.slide-out-blurred-top {
+	-webkit-animation: slide-out-blurred-top 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+	animation: slide-out-blurred-top 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+}
+
+@-webkit-keyframes slide-out-blurred-top {
+    0% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+}
+@keyframes slide-out-blurred-top {
+    0% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+}
+  
+
 /* Mobile styles */
 @media only screen and (max-width: 600px) {
 
@@ -775,16 +894,6 @@ a {
 
     #header-logo i {
         font-size: 24px;
-    }
-
-    #navlist {
-        flex-direction: column;
-        gap: 10px;
-        display: none;
-    }
-
-    #navlist a {
-        font-size: 16px;
     }
 
     #github-btn {
@@ -875,6 +984,23 @@ a {
 
     .project-btn, .modal-project-description {
         font-size: 18px;
+    }
+
+    #menu-btn {
+        display: inline;
+    }
+
+    #navlist {
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        display: none;
+        position: absolute;
+        right: 3vw;
+        top: 12vh;
+        font-size: 20px;
+        width: 100%;
+        backdrop-filter: blur(10px);
     }
 }
 
@@ -974,6 +1100,10 @@ a {
 
     .project-btn {
         width: 80%;
+    }
+
+    #github-btn {
+        display: none;
     }
 }
 

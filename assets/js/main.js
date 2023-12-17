@@ -16,6 +16,7 @@ const mailLink = $.getElementById('mail');
 const websiteLink = $.getElementById('website');
 const menuBtn = $.getElementById('menu-btn');
 const navList = $.getElementById('navlist');
+const menuIcon = $.querySelector('.menu-icon')
 
 const setTypeLibrary = () => {
     
@@ -94,6 +95,16 @@ const closeModal = () => {
     container.classList.remove('blur')
 }
 
+const checkMenu = () => {
+    if (menuIcon.className.includes('staggered')) {
+        menuIcon.className = 'fa-solid fa-xmark menu-icon';
+        showNavList();
+    }else {
+        menuIcon.className = 'fa-solid fa-bars-staggered menu-icon';
+        hideNavList();
+    }
+}
+
 const showNavList = () => {
     navList.classList.remove('hide-navlist');
     navList.classList.remove('slide-out-blurred-top')
@@ -104,8 +115,11 @@ const showNavList = () => {
 const hideNavList = () => {
     navList.classList.remove('show-navlist');
     navList.classList.remove('slide-in-blurred-top')
-    navList.classList.add('hide-navlist')
     navList.classList.add('slide-out-blurred-top');
+
+    setTimeout(() => {
+        navList.classList.add('hide-navlist')
+    }, 1000);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -126,5 +140,5 @@ closeModalBtn.addEventListener('click', () => {
 })
 
 menuBtn.addEventListener('click', () => {
-    showNavList();
+    checkMenu();
 })

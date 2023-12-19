@@ -19,20 +19,27 @@ const navList = $.getElementById('navlist');
 const menuIcon = $.querySelector('.menu-icon')
 
 const setTypeLibrary = () => {
-    
-    let typewriter = new Typewriter(careerType, {
-        loop: true
-    });
 
-    typewriter.typeString('Web Developer')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString('Front-end Developer')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString('Solidity Developer')
-        .pauseFor(2000)
-        .start();
+    let typeWriter = new TypeIt(careerType, {
+        loop: true,
+        speed: 100
+    }).go()
+
+    typeWriter.type("Web Developer")
+        .pause(2500)
+        .move(-10)
+        .delete()
+        .type('Front-end')
+        .pause(2500)
+        .move(10)
+        .delete()
+        .type('UI/UX Designer')
+        .pause(2000)
+        .delete()
+        .type('Solidity Developer')
+        .pause(2000)
+        .delete()
+        .go()
 }
 
 const setAosLibrary = () => {

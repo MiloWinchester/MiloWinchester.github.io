@@ -3,6 +3,7 @@ const $ = document;
 const careerType = $.getElementById('type-career');
 const container = $.getElementById('container');
 const projects = $.querySelectorAll('.project-container');
+const detailsBtns = $.querySelectorAll('.details-btn')
 const modalProject = $.querySelector('.project-modal');
 const modalImg = $.querySelector('.modal-project-img');
 const modalTitle = $.querySelector('.modal-project-title');
@@ -59,36 +60,37 @@ const responsiveLayout = () => {
     }
 }
 
-const setModalProjectData = (project, target) => {
-    let projectNo = target.dataset.project;
-    if (project.dataset.project === projectNo) {
-        const projectId = project.id;
-        const img = $.querySelector(`#${projectId} .project-img`)
-        const title = $.querySelector(`#${projectId} .project-title`)
-        const date = $.querySelector(`#${projectId} .project-date`)
-        const description = $.querySelector(`#${projectId} .project-description`);
-        const skills = $.querySelectorAll(`#${projectId} .project-skill p`);
-        
-        modalImg.setAttribute('src', img.getAttribute('src'));
-        modalTitle.textContent = title.textContent;
-        modalDate.textContent = date.textContent;
-        modalDescrip.textContent = description.textContent;
-
-        modalSkills.innerHTML = '';
-        
-        skills.forEach(skill => {
-            let modalSkillContainer = $.createElement('div');
-            modalSkillContainer.classList.add('modal-project-skill');
-
-            let modalSkill = $.createElement('p');
-            modalSkill.textContent = skill.textContent;
-
-            modalSkillContainer.append(modalSkill);
-            modalSkills.append(modalSkillContainer)
-        })
-
-        showModal();
-    }
+const setModalProjectData = projectNumber => {
+    projects.forEach(project => {
+        if (project.dataset.number === projectNumber) {
+            const projectId = project.id;
+            const img = $.querySelector(`#${projectId} .project-img`)
+            const title = $.querySelector(`#${projectId} .project-title`)
+            const date = $.querySelector(`#${projectId} .project-date`)
+            const description = $.querySelector(`#${projectId} .project-description`);
+            const skills = $.querySelectorAll(`#${projectId} .project-skill p`);
+            
+            modalImg.setAttribute('src', img.getAttribute('src'));
+            modalTitle.textContent = title.textContent;
+            modalDate.textContent = date.textContent;
+            modalDescrip.textContent = description.textContent;
+    
+            modalSkills.innerHTML = '';
+            
+            skills.forEach(skill => {
+                let modalSkillContainer = $.createElement('div');
+                modalSkillContainer.classList.add('modal-project-skill');
+    
+                let modalSkill = $.createElement('p');
+                modalSkill.textContent = skill.textContent;
+    
+                modalSkillContainer.append(modalSkill);
+                modalSkills.append(modalSkillContainer)
+            })
+    
+            showModal();
+        }
+    })
 }
 
 const showModal = () => {
@@ -136,9 +138,9 @@ window.addEventListener('DOMContentLoaded', () => {
     responsiveLayout();
 })
 
-projects.forEach(project => {
-    project.addEventListener('click', event => {
-        setModalProjectData(project, event.target);
+detailsBtns.forEach(btn => {
+    btn.addEventListener('click', event => {
+        setModalProjectData(event.target.dataset.number);
     })
     
 })
